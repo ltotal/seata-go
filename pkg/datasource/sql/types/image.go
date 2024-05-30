@@ -225,7 +225,7 @@ func (c *ColumnImage) UnmarshalJSON(data []byte) error {
 	if value != nil {
 		switch JDBCType(columnType) {
 		case JDBCTypeReal: // 4 Bytes
-			actualValue = value.(float32)
+			actualValue = value.(float64)
 		case JDBCTypeDecimal, JDBCTypeDouble: // 8 Bytes
 			actualValue = value.(float64)
 		case JDBCTypeTinyInt: // 1 Bytes
